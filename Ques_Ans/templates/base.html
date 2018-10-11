@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wall</title>
+    </head>
+    <body>
+        <div class="w3-container w3-black">
+        </div>
+		<div align="right">
+		    <a href="/login/profile/">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="/login/logout/">Logout</a><br> 
+        </div><br>   <hr>
+		<div align="right">
+			<form action="search.html"> 
+				<input type="text" placeholder="Search" name="search "height="50px" wodth="250px" align="center" action="search.html">
+				<input type="submit" value="search">
+			</form>
+		 </div><br><hr>
+		 <div align="left">
+			<input type="button" value="New Post" action="Que_Ans/ask">
+		 <div><hr>
+		{% block content %}
+        {% endblock %}
+        <div class ="w3-container w3-blue">   
+      <!--    <h6>Software Project by CE-130,131,132.</h6> -->
+            <p>
+            </p>
+        </div>
+    </body>
+</html>

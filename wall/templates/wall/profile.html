@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	Here is your info {{name}}<br>
+	Phone Number = {{xuser.phone_number}}<br>
+	State = {{xuser.state}}<br>
+	Name = {{xuser.name}}<br>
+	City = {{xuser.city}}<br>
+	address = {{xuser.address}}<br>
+	Email = {{xuser.email}}<br>
+	
+	YOu follow these users :
+    {% for p in people %}
+
+        <h3><a href="/wall/search/?search={{p.following}}">{{ p.following }}</a></h3>
+		
+
+    {% endfor %}
+
+{% endblock %}

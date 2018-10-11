@@ -1,0 +1,25 @@
+ {%  extends '/login/base.html' %}
+	{% block content %}
+	<table>
+	<tr>
+        <h1>You follow the following users:<h1>
+    </tr>
+    <tr>
+        <div id="content">
+        {% block content %}{% endblock %}
+        </div>
+    </tr>
+    <h6>Alter Your Information?</h6>
+    <tr>
+        <td>
+            <a href="/Update_Username.com">Update Username</a>
+        </td>
+        <td>
+            <a href="/Update_Password.com">Update Password</a>
+        </td>
+        <td>
+            <a href="/Update_phone_number.com">Update Phone_number</a>
+        </td>
+    </tr>
+	</table>
+	{% endblock %}

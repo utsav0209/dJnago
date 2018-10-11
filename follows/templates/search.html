@@ -1,0 +1,40 @@
+////////////////////Little bit changes----Just go through it once(may be the url in href) create the page follow.html
+<html>
+    <head>
+        Your search query
+    </head>
+
+    <body>
+    {% block content%}
+        {% if searched_user is not None %}
+            <h3>Name:{{ searched_user }}</h3>
+            <a href="follow.html">Follow the user</a>
+            <h6>
+                Phone_Number:{{ searched_user.phone_number }}<br>
+                E-mail:{{ searched_user.email }}<br>
+                Address:{{ searched_user.address }}<br>
+                City:{{ searched_user.city }}<br>
+                State:{{ searched_user.state }}<br>
+            </h6>
+            {% if questions is not None %}
+                {% for q in questions %}
+                    {{ q.heading }}<br>
+                    =====>{{ q.q_description }}<br>
+                {% endfor %}
+            {% endif %}
+            {% if answers is not None %}
+                {% for a in answers %}
+                    {{ a.ans }}<br>
+                {% endfor %}
+            {% endif %}
+            {% if comments is not None %}
+                {% for c in comments %}
+                    {{ c.comment }}<br>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+        {% if searched_user is None %}
+            No such User exists
+        {% endif %}
+    {% endblock %}
+    </body>

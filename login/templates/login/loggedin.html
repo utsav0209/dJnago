@@ -1,0 +1,8 @@
+{%extends "login/base.html" %}
+    {% block content %}
+    <h2> Welcome {{fullname}} you are logged in! </h2>
+    <p> Click here to<a href="/login/logout/"> logout </a></p>
+    <p> Click here to go to your <a href="/wall/wall">Wall</a></p>
+    <p>Click here to go to <a href="/wall/profile">My Profile</a></p>
+    <p>Click here to post question<a href="/Ques_Ans/ask">Ask</a></p>
+    {% endblock %}

@@ -1,0 +1,20 @@
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>New Post</title>
+    </head>
+    <body>
+        <div class="w3-container w3-black">
+        </div>
+		<div align="right">
+		    <a href="/wall/wall/">Wall</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/wall/profile/">My Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="/login/logout/">Logout</a><br>
+        </div><br><hr>
+		<form action="/Ques_Ans/answer_posted/" id="usrform" method="POST" >
+            <input type="submit" value="post"">{% csrf_token %}
+		</form>
+		    <textarea rows="4" cols="50" name="ans" form="usrform" placeholder="Add your answer here!"></textarea>
+		<br>r
+	</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'wall/base.html' %}
+{% block content %}
+	<h3>Searched User {{searched_user}} has done following activities </h3>
+	<table>
+	{% for x in questions %}
+		<tr>
+			<td><b>{{x.heading}}</b></td>
+			<td>-{{x.user}}</td>
+		</tr>
+		<tr>
+			<td>==>{{x.q_description}}</td>
+		</tr>
+        <tr>
+		<!--{{x.q_id}} is questions id -->
+            <td>
+                <a href="/Ques_Ans/answer?q_id={{x.id}}">Would like to answer?</a></span>
+            </td>
+        </tr>
+        <!--<tr>Answers:</tr>-->
+        {% for y in answers %}
+            <tr>
+                {% if y.question == x.id %}
+                    <td>===========>{{ y.ans }}</td>
+                    <td>-{{y.user}}</td>
+                    <!--<tr>Comments:</tr>-->
+                    {% for z in comments %}
+                        <tr>
+                        {% if z.answer == y.id %}
+                            <td>=========================>{{ z.comment }}</td>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </tr>
+        {% endfor %}
+	{% endfor %}
+	</table>
+	Would you like to follow <a href="/follows/follow/?user={{searched_user}}">{{searched_user}}</a>
+	
+{% endblock %}
